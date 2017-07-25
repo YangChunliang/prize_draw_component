@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽奖页面</title>
+    <style>
+        .box{
+            margin:60px auto;
+            width:480px;
+        }
+        #app img{
+            float: left;
+            width: 150px;
+            margin-right:10px;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <prize-draw></prize-draw>
+</div>
+<template id="prize_draw">
+    <div class="box">
+        <img v-for="item in url" v-bind:src="item" alt="">
+    </div>
+</template>
+<script src="vue.js"></script>
+<script>
+    Vue.component('prize-draw', {
+        template: '#prize_draw',
+        data: function(){
+            return {
+                url :[
+                    './img/111.jpg',
+                    './img/111.jpg',
+                    './img/111.jpg',
+                    './img/111.jpg',
+                    './img/prize.jpg',
+                    './img/111.jpg',
+                    './img/111.jpg',
+                    './img/111.jpg',
+                    './img/111.jpg'
+                ]
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app'
+    })
+</script>
+</body>
+</html>
