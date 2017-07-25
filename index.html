@@ -4,27 +4,7 @@
     <meta charset="UTF-8">
     <title>抽奖页面</title>
     <link href="./img/111.ico" rel="shortcut icon">
-    <style>
-        .box{
-            margin:60px auto;
-            padding-left: 10px;
-            padding-top: 10px;
-            width:480px;
-            height:480px;
-            background-color: red;
-        }
-        #app img{
-            float: left;
-            width: 150px;
-            margin-right:10px;
-            margin-bottom:10px;
-            border-radius: 5px;
-        }
-        #app img:nth-child(5):hover{
-            opacity: .8;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 <div id="app">
@@ -32,10 +12,11 @@
 </div>
 <template id="prize_draw">
     <div class="box">
-        <img v-for="item in url" v-bind:src="item" alt="">
+        <img style="opacity: 1" v-for="item in url" v-bind:src="item" alt="" name="pic">
     </div>
 </template>
-<script src="vue.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/index.js"></script>
 <script>
     Vue.component('prize-draw', {
         template: '#prize_draw',
